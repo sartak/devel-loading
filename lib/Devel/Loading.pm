@@ -15,7 +15,7 @@ sub import {
     else {
         $code = sub {
             my @caller = caller;
-            warn "$_[1] at $caller[1] line $caller[2]\n";
+            warn "$_[1] at $caller[1] line $caller[2].\n";
             return undef;
         };
     }
@@ -34,15 +34,16 @@ Devel::Loading - Run code before each module is loaded
 =head1 SYNOPSIS
 
     perl -MDevel::Loading -Mbase -e0
-        base.pm at - line 0
-        strict.pm at /opt/local/lib/perl5/5.8.8/base.pm line 3
-        vars.pm at /opt/local/lib/perl5/5.8.8/base.pm line 4
-        warnings/register.pm at /opt/local/lib/perl5/5.8.8/vars.pm line 7
-        warnings.pm at /opt/local/lib/perl5/5.8.8/warnings/register.pm line 24
-        Carp.pm at /opt/local/lib/perl5/5.8.8/warnings.pm line 134
-        Exporter.pm at /opt/local/lib/perl5/5.8.8/Carp.pm line 193
+        base.pm at - line 0.
+        strict.pm at /opt/local/lib/perl5/5.8.8/base.pm line 3.
+        vars.pm at /opt/local/lib/perl5/5.8.8/base.pm line 4.
+        warnings/register.pm at /opt/local/lib/perl5/5.8.8/vars.pm line 7.
+        warnings.pm at /opt/local/lib/perl5/5.8.8/warnings/register.pm line 24.
+        Carp.pm at /opt/local/lib/perl5/5.8.8/warnings.pm line 134.
+        Exporter.pm at /opt/local/lib/perl5/5.8.8/Carp.pm line 193.
 
 
+    use Regexp::Common;
     use Devel::Loading sub { die "I can't load $_!" if /$RE{profanity}/ };
 
 =head1 DESCRIPTION
