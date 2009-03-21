@@ -6,13 +6,17 @@ sub import {
 
     if ($code) {
         my $old_code = $code;
-        $code = sub { local $_ = $_[1]; $old_code->($_[1]); undef };
+        $code = sub {
+            local $_ = $_[1];
+            $old_code->($_[1]);
+            return undef;
+        };
     }
     else {
         $code = sub {
             my @caller = caller;
             warn "$_[1] at $caller[1] line $caller[2]\n";
-            undef
+            return undef;
         };
     }
 
