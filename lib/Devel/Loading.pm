@@ -1,5 +1,7 @@
 package Devel::Loading;
 
+our $VERSION = 0.02;
+
 sub import {
     my $class = shift;
     my $code  = shift;
