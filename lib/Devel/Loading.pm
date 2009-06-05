@@ -63,7 +63,7 @@ Multiple C<Devel::Loading> hooks may be present in C<@INC>. This is a feature!
 
 =head1 AUTHOR
 
-Shawn M Moore, C<< <sartak@bestpractical.com> >>
+Shawn M Moore, C<sartak@gmail.com>
 
 =head1 SEE ALSO
 
